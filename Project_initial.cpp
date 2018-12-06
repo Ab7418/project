@@ -15,6 +15,7 @@
 #include <vector>
 #include <set>
 using std::ifstream;
+#include <map>
 
 typedef long int myint;
 void printToFile(std::string filename, const std::string &text, std::string ticker){
@@ -65,8 +66,10 @@ void stockDataToFile(const std::string &tickerName,
 int main(){
     std::vector<double> v;
     std::set <std::vector<double> > all_thirty_day;
+    std::set <std::vector<double> >::iterator vt;
+    std::vector <double>::iterator it;
     v.resize(51); // will not contain more than 30 days worth of data
-    std::set<double>::iterator it;
+//    std::set<double>::iterator it;
     std::string line;
     std::string filename;
     std::cout<< "please enter the stock that you would like to add to the portfolio"<< std::endl;
@@ -89,14 +92,24 @@ int main(){
              v[j]=std::stof(line);
              j++;}
             i++;}}
-     //taking the zeros out from the vectors
+     //taking the zeros out from th e vectors
      v.resize(j);
      all_thirty_day.insert(v);
 
  }
 }
+// to access each element of each stock to calculate return and covariance
+  for (vt=all_thirty_day.begin(); vt!=all_thirty_day.end(); ++vt){
+    std::cout << "printing a new stock return" << std::endl;
+      int siz= ((*vt)).size();
 
-  
+     for ( int i=0; i< siz; i++){
+       std::cout << ((*vt))[i] << std::endl;
+     }
+
+
+  }
+
 
 
 
