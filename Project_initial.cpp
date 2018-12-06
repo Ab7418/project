@@ -1,5 +1,5 @@
 #include <iostream>
-
+//project will create quotes folder where you usually compile you files that is where the txt files are stored
 // quandl_first_program.cpp
 // PLACE_YOUR_QUANDL_TOKEN_HERE in the main() function
 // should be replaced by your Quandl authorization token.
@@ -64,6 +64,7 @@ void stockDataToFile(const std::string &tickerName,
     }
 }
 int main(){
+    system("mkdir -p quotes");
     std::vector<double> v;
     std::set <std::vector<double> > all_thirty_day;
     std::set <std::vector<double> >::iterator vt;
@@ -100,11 +101,12 @@ int main(){
 }
 // to access each element of each stock to calculate return and covariance
   for (vt=all_thirty_day.begin(); vt!=all_thirty_day.end(); ++vt){
-    std::cout << "printing a new stock return" << std::endl;
+    std::cout << "printing a new stock 30 days close price" << std::endl;
       int siz= ((*vt)).size();
 
      for ( int i=0; i< siz; i++){
-       std::cout << ((*vt))[i] << std::endl; // look here to calculate the return each of these is the close price that is being printed
+       std::cout << ((*vt))[i] << std::endl; // this is here the element
+       //you need to ca
      }
 
 
