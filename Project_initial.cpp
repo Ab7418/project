@@ -104,7 +104,7 @@ int main(){
       int siz= ((*vt)).size();
 
      for ( int i=0; i< siz; i++){
-       std::cout << ((*vt))[i] << std::endl;
+       std::cout << ((*vt))[i] << std::endl; // look here to calculate the return each of these is the close price that is being printed
      }
 
 
